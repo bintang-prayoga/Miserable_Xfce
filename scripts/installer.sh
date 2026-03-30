@@ -51,7 +51,7 @@ detect_os() {
         OS="debian"
         PKG_MANAGER="apt"
         INSTALL_CMD="sudo apt install -y"
-        UPDATE_CMD="sudo apt update && sudo apt upgrade -y"
+        UPDATE_CMD="sudo apt update"
         SYNC_CMD="sudo apt update"
     elif command -v dnf &> /dev/null; then
         OS="fedora"
@@ -84,7 +84,7 @@ install_core() {
         sudo systemctl enable sddm
         ;;
     debian)
-        $INSTALL_CMD xfce4 xfce4-goodies lightdm lightdm-gtk-greeter fonts-noto thunar xfce4-panel bat neofetch rofi i3lock-color onboard libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson ninja-build git
+        $INSTALL_CMD xfce4 xfce4-goodies lightdm lightdm-gtk-greeter fonts-noto thunar xfce4-panel bat neofetch rofi onboard libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson ninja-build git
         sudo systemctl enable lightdm
         ;;
     fedora)
